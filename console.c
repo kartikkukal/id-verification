@@ -88,6 +88,7 @@ const char console_input_option() {
 
 void console_input_id(char* id, int length, int group) {
     scanf("%s", id);
+    while( getchar() != '\n');
 }
 
 void console_print_id(char* id, int length, int group) {
