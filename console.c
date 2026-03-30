@@ -5,7 +5,7 @@
 
 #define DELIMITER '-'
 
-#if defined(_WIN32)
+#if defined(__linux__)
 
 #include <ncurses.h>
 
