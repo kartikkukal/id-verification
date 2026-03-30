@@ -5,7 +5,7 @@
 
 #define DELIMITER '-'
 
-#if defined(__linux__)
+#if defined(_WIN32)
 
 #include <ncurses.h>
 
@@ -34,6 +34,7 @@ const char console_input_option() {
 }
 
 void console_input_id(char* id, int length, int group) {
+    printw("Enter ID: ");
     for (int i = 0; i < length; i++) {
         char ch = getch();
         id[i] = ch;
@@ -45,6 +46,7 @@ void console_input_id(char* id, int length, int group) {
 }
 
 void console_print_id(char* id, int length, int group) {
+    printw("Generated ID: ");
     for (int i = 0; i < length; i++) {
         printw("%c", id[i]);
 
@@ -87,11 +89,13 @@ const char console_input_option() {
 }
 
 void console_input_id(char* id, int length, int group) {
+    printf("Enter ID: ");
     scanf("%s", id);
     while( getchar() != '\n');
 }
 
 void console_print_id(char* id, int length, int group) {
+    printf("Generated ID: ");
     for (int i = 0; i < length; i++) {
         printf("%c", id[i]);
 
